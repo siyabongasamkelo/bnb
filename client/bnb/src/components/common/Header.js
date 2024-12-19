@@ -1,6 +1,7 @@
 import React from "react";
 import { HeaderWrapper, Links } from "./Header.styled";
 import { Link } from "react-router-dom";
+import Button from "./Button";
 
 const Header = () => {
   return (
@@ -23,7 +24,7 @@ const Header = () => {
         </ul>
       </Links>
 
-      <button></button>
+      <Button>Book Now</Button>
     </HeaderWrapper>
   );
 };
