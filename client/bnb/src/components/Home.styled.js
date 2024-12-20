@@ -34,12 +34,37 @@ export const HomeContainer = styled.div`
   backdrop-filter: blur(7.6px);
   -webkit-backdrop-filter: blur(7.6px);
   border: 1px solid rgba(255, 255, 255, 0.3); */
+
+  @media only screen and (max-width: 600px) {
+    width: 100%;
+    height: 95vh;
+    margin-left: 0;
+  }
+  @media only screen and (min-width: 768px) {
+    width: 100%;
+    height: 95vh;
+    margin-left: 0;
+  }
+  @media only screen and (min-width: 992px) {
+    height: 80vh;
+    width: 100%;
+    /* margin-left: -5%; */
+  }
 `;
 
 export const HomeContent = styled.div`
   height: 75%;
   width: 100%;
   display: flex;
+  @media only screen and (max-width: 600px) {
+    flex-direction: column;
+  }
+  @media only screen and (min-width: 768px) {
+    flex-direction: column;
+  }
+  @media only screen and (min-width: 992px) {
+    flex-direction: row;
+  }
 `;
 
 export const LeftContent = styled.div`
@@ -82,12 +107,32 @@ export const LeftContent = styled.div`
   .down {
     margin-top: 25%;
   }
+  @media only screen and (max-width: 600px) {
+    display: none;
+  }
+  @media only screen and (min-width: 768px) {
+    display: none;
+  }
+  @media only screen and (min-width: 992px) {
+    display: flex;
+  }
 `;
 
 export const MiddleContent = styled.div`
   height: 100%;
   width: 80%;
   display: flex;
+  @media only screen and (max-width: 600px) {
+    flex-direction: column;
+    width: 100%;
+  }
+  @media only screen and (min-width: 768px) {
+    flex-direction: column;
+    width: 100%;
+  }
+  @media only screen and (min-width: 992px) {
+    flex-direction: row;
+  }
   .left {
     height: 100%;
     width: 80%;
@@ -103,12 +148,8 @@ export const MiddleContent = styled.div`
       font-size: 88px;
     }
     p {
-      // <uniquifier>: Use a unique and descriptive class name
-      // <weight>: Use a value from 100 to 900
-
       font-family: "Sour Gummy", serif;
       font-optical-sizing: auto;
-      /* font-weight: <weight>; */
       font-style: normal;
       font-variation-settings: "wdth" 100;
 
@@ -199,10 +240,89 @@ export const MiddleContent = styled.div`
         border: 1px solid rgba(255, 255, 255, 0.3);
       }
     }
+    @media only screen and (max-width: 600px) {
+      width: 100%;
+      height: 60%;
+      h1 {
+        font-size: 52px;
+        text-align: center;
+      }
+      p {
+        text-align: center;
+        font-size: 18px;
+        margin-top: 5%;
+      }
+
+      button {
+        margin-left: 15%;
+        width: 70%;
+      }
+
+      .pick-date {
+        display: none;
+      }
+    }
+    @media only screen and (min-width: 768px) {
+      width: 100%;
+      height: 60%;
+      h1 {
+        font-size: 74px;
+        text-align: center;
+      }
+      p {
+        text-align: center;
+        font-size: 20px;
+        margin-top: 5%;
+      }
+
+      button {
+        margin-left: 30%;
+        width: 40%;
+      }
+
+      .pick-date {
+        display: none;
+      }
+    }
+    @media only screen and (min-width: 992px) {
+      height: 100%;
+      width: 80%;
+      h1 {
+        font-size: 88px;
+        text-align: left;
+      }
+      p {
+        text-align: left;
+        font-size: 20px;
+        margin-top: 0%;
+      }
+
+      button {
+        margin-left: 0%;
+        height: 45px;
+        width: 140px;
+      }
+
+      .pick-date {
+        display: block;
+      }
+    }
   }
   .right {
     height: 100%;
     width: 20%;
+    @media only screen and (max-width: 600px) {
+      width: 100%;
+      height: 50%;
+    }
+    @media only screen and (min-width: 768px) {
+      width: 100%;
+      height: 50%;
+    }
+    @media only screen and (min-width: 992px) {
+      height: 100%;
+      width: 20%;
+    }
     img {
       height: 55%;
       width: 180%;
@@ -254,6 +374,64 @@ export const MiddleContent = styled.div`
         &:hover {
           color: ${(props) => props.theme.color.tetiary};
         }
+      }
+    }
+    @media only screen and (max-width: 600px) {
+      img {
+        margin-top: 2%;
+        margin-left: 5%;
+        width: 90%;
+        height: 90%;
+      }
+      .pic-info {
+        display: none;
+      }
+      .deco3 {
+        height: 10%;
+        width: 25%;
+        margin-top: -8%;
+      }
+      .icons {
+      }
+    }
+    @media only screen and (min-width: 768px) {
+      img {
+        margin-top: 2%;
+        margin-left: 5%;
+        width: 90%;
+        height: 90%;
+      }
+      .pic-info {
+        display: none;
+      }
+      .deco3 {
+        height: 10%;
+        width: 25%;
+        margin-top: -8%;
+      }
+      .icons {
+        margin-top: 10%;
+        margin-left: 35%;
+      }
+    }
+    @media only screen and (min-width: 992px) {
+      img {
+        margin-top: 50%;
+        margin-left: -55%;
+        width: 180%;
+        height: 55%;
+      }
+      .pic-info {
+        display: block;
+      }
+      .deco3 {
+        height: 140px;
+        width: 200px;
+        margin-top: -5%;
+      }
+      .icons {
+        margin-top: 20%;
+        margin-left: 20%;
       }
     }
   }

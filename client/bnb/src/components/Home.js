@@ -17,9 +17,43 @@ import {
   TwitterX,
   Facebook,
 } from "react-bootstrap-icons";
+import { useState } from "react";
+import { motion } from "framer-motion";
 import Button from "./common/Button";
 import bnb from "./../assets/img/aboutpic.jpg";
+import house from "./../assets/img/house.jpg";
 const Home = () => {
+  const [currentImage, setCurrentImage] = useState(0);
+
+  const images = [bnb, house];
+
+  const variants = {
+    initial: {
+      opacity: 0,
+    },
+    animate: {
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+        ease: "easeInOut",
+      },
+    },
+  };
+
+  const handleClick = (direction) => {
+    if (direction === "forward") {
+      setCurrentImage((currentImage + 1) % images.length);
+    }
+
+    if (direction === "backward") {
+      if (currentImage === 0) {
+        setCurrentImage(images.length - 1);
+      } else {
+        setCurrentImage((currentImage - 1) % images.length);
+      }
+    }
+  };
+
   return (
     <HomeWrapper>
       <Container>
@@ -27,10 +61,20 @@ const Home = () => {
           <Header />
           <HomeContent>
             <LeftContent>
-              <div className="up">
+              <div
+                className="up"
+                onClick={() => {
+                  handleClick("forward");
+                }}
+              >
                 <CaretUpFill />
               </div>
-              <div className="down">
+              <div
+                className="down"
+                onClick={() => {
+                  handleClick("backward");
+                }}
+              >
                 <CaretDownFill />
               </div>
             </LeftContent>
@@ -63,7 +107,14 @@ const Home = () => {
                 </div>
               </div>
               <div className="right">
-                <img src={bnb} alt="bnb houses" />
+                <motion.div
+                  initial="initial"
+                  animate="animate"
+                  variants={variants}
+                  key={currentImage}
+                >
+                  <img src={images[currentImage]} alt="bnb houses" />
+                </motion.div>
                 <div className="pic-info">
                   <p>4 bedrooms</p>
                   <h3>R 400.00</h3>
