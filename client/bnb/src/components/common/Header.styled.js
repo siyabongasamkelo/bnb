@@ -9,6 +9,19 @@ export const HeaderWrapper = styled.header`
   justify-content: space-between;
   align-items: center;
 
+  svg {
+    display: none;
+  }
+  @media only screen and (max-width: 600px) {
+    svg {
+      display: block;
+      transform: scale(200%);
+    }
+    button {
+      display: none;
+    }
+  }
+
   h3 {
     color: ${(props) => props.theme.color.text};
     font-family: "DynaPuff", serif;
@@ -31,5 +44,8 @@ export const Links = styled.div`
     padding-left: 15px;
     text-decoration: none;
     color: rgba(0, 0, 0, 0.6);
+  }
+  @media only screen and (max-width: 600px) {
+    display: none;
   }
 `;

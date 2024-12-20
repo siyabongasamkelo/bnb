@@ -2,6 +2,7 @@ import React from "react";
 import { HeaderWrapper, Links } from "./Header.styled";
 import { Link } from "react-router-dom";
 import Button from "./Button";
+import { List } from "react-bootstrap-icons";
 
 const Header = () => {
   return (
@@ -25,6 +26,7 @@ const Header = () => {
       </Links>
 
       <Button>Book Now</Button>
+      <List />
     </HeaderWrapper>
   );
 };
