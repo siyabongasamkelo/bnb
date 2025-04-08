@@ -47,8 +47,8 @@ export const HomeContainer = styled.div`
   }
   @media only screen and (min-width: 992px) {
     height: 80vh;
-    width: 100%;
-    /* margin-left: -5%; */
+    width: 110%;
+    margin-left: -5%;
   }
 `;
 
